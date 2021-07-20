@@ -1,0 +1,9 @@
+Windows:
+
+with venv
+
+1. Criar a pasta do projeto.
+2. Abrir no console e lançar o comando: 'python -m venv venv' (ultimo venv é o nome da pasta a ser criada)
+3. Ativar o Venv com: .\venv\Scripts\Activate.ps1/bat (ps1 caso power-shell; bat caso cmd)
+4. Caso restrito liberar o power-shell com o comando: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned  [a]
+

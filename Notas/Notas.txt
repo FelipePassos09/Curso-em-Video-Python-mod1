@@ -1,0 +1,319 @@
+Delimitador de conteúdo, texto - Aspas " ou '
+Delimitador de conteúdo, função - Parenteses ( e )
+
+
+
+Função: 
+print - imprimir conteúdo de função
+print ("Olá Mundo!")
+
+** Operações com números não levam aspas
+	print(7+4)
+
+** Concatenar dados usa-se + ou ,
+	print('7'+'4')
+	print('7','4')
+
+Criar váriável com nome da variável seguido de = e então o contédo da váriável:
+
+variável1 = "Nome"
+variável2 = "Idade"
+variável3 = "Peso"
+
+** Usa-se virgula para concatenar conteúdos diferentes (ex: nome e núm)
+	print('nome','idade','peso')
+
+Para converter o conteúdo de uma variável em número para realizar uma operação é necessário inserir a váriável entre parenteses precedida da função int.
+	soma = int(variavel1)+int(variavel2)
+
+Pode-se usar a sequencia de duas chaves {} como representação da variável aplicada e a função .format(variável) como conteúdo para imprimir ou operar uma string.
+
+
+Aula 6 - Tipos_Primitivos
+
+Caso exemplo:
+Ler dois números e cálcular a soma.
+	variavel1 = input('Diga um número') --- 2
+	variavel2 = input('Diga outro número') --- 5
+	soma = variavel1 + variavel2
+		print('A soma vale' , soma)
+		
+		>>> A soma vale 25
+
+Solução: Usamos um tipo primitivo (int) para converter o conteúdo para um número inteiro.
+	variavel1 = int(input('Diga um número'))
+	variavel2 = int(input('Diga outro número'))
+	soma = variavel1 + variavel2
+	print('A soma vale', soma)
+
+Temos quatro funções basicas para definir tipos primitivos que são:
+int - que define números inteiros
+float - define números reais (com casas decimais) [o python usa '.' para separar as casa decimais]
+bool - define valores booleanos, valores booleanos são sempre True ou False e precisam estar com grafados sempre com inicial maiúscula para serem considerados como tal. São usados em analises lógicas e suas derivações.
+str - define valores simples, não flutuantes. são sempre grafados entre aspas (simples ou duplas), mesmo quando uma string vazia ('').
+
+Podemos imprimir (print) de maneira diferente utilizando uma máscara (representada por {}) e apontando o conteúdo da máscara com .format(variável)
+
+A função type recupera o tipo de objeto da variável relacionada. Exemplo:
+	n = floot(input('Digite um número: ')
+	print(type(n))
+		>>> <class 'float'>
+
+Se aplicado o tipo booleano à um input ele checará se tem valor ou está vazio e nesse caso retornará True para conteúdo e False para vazio.
+
+funções is... checam qual a característica de um valor em uma string e retornam True ou False para validar se é possivel a conversão de tipo.
+isnumeric - checa se é número (indiferente o tipo)
+isalpha - checa se é apenas texto
+isalphanum - se é texto ou número
+isupper - se é só maiúscula
+islower - se é apenas minúscula
+
+...
+
+Aula #07 - Operadores Aritimeticos
+
++ = adição
+- = subtração
+* = multiplicação
+/ = divisão
+
+** = potência
+// = divisão inteira
+% = módulo ou resto da divisão
+
+Ex: 
+    5+2==7
+    5-2==3
+    5*2==10
+    5/2==2.5
+    5**2==25
+    5//2==2
+    5%2==1
+
+Ordem de precedência:
+1 ()
+2 **
+3 *,//,/,%
+4 +,-
+
+Pode ser usada a função pow para potência.
+    Ex. 3**3 == pow(3,3)
+
+Raiz quadrada pode ser feita elevando o numero à uma fração de 1 (entre parenteses) da potência referente à raiz buscada.
+    Ex. raiz quadrada de 9 == 9**(1/2)
+
+Pode ser usado operadores para processar strings não numéricas.
+    Ex. oioioioi == oi*4
+
+Podemos editar o campo da mascara de .format através de operadores aritiméticos tal como e alinhar o conteúdo caso haja
+espaço vazio na quantidade de campos solicitada.
+    Ex. print('Olá, {:4}.'.format('o')) == Olá, o   .
+
+O alinhamento é feito conforme abaixo:
+< - alinha à esquerda.
+> - alinha à direita.
+^ - Centraliza.
+    Ex. print('Olá, {:>4}.'.format('o')) == Olá,    o.
+
+Podemos também acrescer caracteres para preenchimento do espaço vazio colocando-os logo após os ':'.
+    Ex. print('Olá, {:!^4}.'.format('o')) == Olá, !o!!.
+
+Com o item acima também podemos estabelecer quantas casas decimais serão apresentadas apenas incluindo .nf sendo 'n' o
+número de casas decimais pretendidas e f o identificador que estamos falando de valor floot.
+    Ex. print('A divisão simples de 2 e 3 é {:.3f}'.format(2/3))
+
+Para remover a quebra da linha inserimos ao final do contexto de print ", end=''", caso queiramos colocar um espaço ou
+outro conteúdo o inserimos dentro das Aspas de end.
+    Ex. print('..'.format(".."), end='')
+
+E caso queiramos colocar no meio do contexto de print usamos "\n".
+    Ex. print('A soma é {}, \na multiplicação {} \ne a divisão simples {:.3f}'.format(s, m, d,))
+    
+
+*********************************______________*********************************
+
+Para trabalharmos com cálculos consecutivos podemos usar listas e nesse caso temos diversas funções que podemos levar 
+em consideração.
+
+	Lista: é definida pelo uso de colchetes ao invés de chaves ou pela string 'list' e pode conter quaisquer tipos de dados.
+	Distribuição: usando a função 'range' e sinalizando inicio, fim e salto podemos criar uma lista uniforme automaticamente dispersa.
+	
+	Usando uma função 'for' podemos criar o cálculo consecutivo, item a item, sem a necessidade de replicar a expressão alterando as variáveis.
+	Ex: 
+
+		multi = int(input('Insira o número que deseja multiplicar: '))
+
+		inicio = 0
+		fim = 11
+		salto = 1
+
+		multiplos = list(range(inicio,fim,passo))
+
+		print('Usando listas:\n\nA tabuada de {} é:'.format(multi))
+
+		for item in multiplos:
+    		result = (item*multi)
+    		print('{} vezes {} é {}'.format(item, multi, result))
+
+	#-- Nessa expressão item se comporta como uma váriável respectiva a cada elemento da lista
+
+*********************************______________*********************************
+Aula #08 - Utilizando Módulos
+
+Os programas em python pro padrão possuam um conjunto limitado de funcionalidades.
+Para acrescentar funcionalidades precisamos instalar módulos/bibliotecas para que acrescentemos novas funcionalidades.
+
+A função para instalar os módulos é a 'import'.
+	Ex. import bibli
+para instalar apenas alguma aplicação de uma biblioteca podemos usar o comando 'from'.
+	Ex. from bibli import snack
+		*Imprtante: ao usar a importação de módulos da biblioteca não utilizamos a reefrencia da biblioteca na função
+
+
+Para consultar a referência de bibliotecas pode-se ir em python.org e ir em 'doc's' > 'versão utilizada' e 'library reefrence'.
+	* No VSCODE é necessário instalar as bibliotecas não nativas via entrada pip direto no console
+		Ex. pip install emoji
+
+Alguns módulos possuem funções com resultados não 'printáveis'. Nesse caso apenas a inclusão da função irá gerar o resultado.
+
+
+Aula 09 - Manipulando Cadeias de Texto
+
+Uma frase pode ser chamada de String ou cadeia de caracteres, são representadas sempre entre aspas simples
+duplas ou tres aspas simples.
+
+ex.: frase = 'Abc de Fgh'
+
+as strings são armazendas em campos numerados, ou seja, cada caractere é um item numerado dentro da memoria.
+* dentro da string todos os caracteres são itens numerados, incluindo os espaços. A contagem inicia a partir de 0
+e não de 1.
+
+*Fatiamento: significa 'recortar' um pedaço da string inserida.
+	Ex. frase[9] - colchetes representa lista.
+		A linguagem permite diferenciar caractere Mai de Min, mas há possibilidade de correção.
+Podemos recortar interválos usando ':' entre o caractere inicial e o final.
+	Ex.: frase[9:13]
+		No python o último caractere (13) é omitido sendo nesse caso sempre contar um a mais.
+			Ex.: frase[9:14]
+caso queiramos incluir saltos utilizamos outro simbolo de dois pontos ':' para sinalizar o salto.
+	Ex.: frase[9:13:1]
+caso queiramos fatiar um pedaço da frase começando da esquerda não precisamos colocar o inicio.
+	Ex: frase[:13]
+caso queiramos recortar um pedaço até o final da frase omitimos o final.
+	Ex.: frase[9:]
+
+		* se precisarmos fatiar  de algum ponto até o final e com salto usamos os dois pontos seguidos.
+			Ex.: frase[9::3]
+
+Analise: 
+	Podemos usar funções de analise para verificar uma string.
+
+	len - [LENGTH] é uma função que conta quantos caracteres a string possui.
+	count - conta quantos caracteres conforme argumento da função possuem na string.
+	 Ex.: frase.count('o')
+	 	*Pode ser usado para contar o caractere em um fatiamento.
+		 	Ex.: frase.count('o', 0, 13)
+		* Se usado com uma sequencia de caracteres ele indica onde começa a contagem.
+			Ex.: frase.count('deo')
+
+	find - encontra na string a posição de uma sequencia de caracteres. Se não existe ele retorna '-1'.
+	in - procura se existe o argumento dentro de uma string retornando True ou False.
+		
+Transformação:
+	Usadas para transformar uma string. No python as strings não são passiveis de alteração, nesse caso somente
+	podemos editá-las usando funções de transformação.
+
+	replace - substitui um argumento por outro indicado:
+		Ex.: frase.replace('Curso', 'Aula')
+			*Se não couber na string o programa adequa o resultado do replace de acordo com a necessidade.
+	upper/lower - capitaliza ou diminui a fonte utilizada.
+		Ex.: frase.upper()
+			*É um método, não leva argumento.
+	capitalize - altera a string para minusculas e mantém ou insere a primeira letra para maiuscula
+	title - analisa quantas palavras há na string e altera todo o texto para minúsculo e mantém a primeira letra
+	de cada palavra em maiúscula. 
+		Ex.: frase.title()
+	strip - remove todos os espaços inúteis, começo e fim, da string.
+	rstrip/ lstrip - remove os espaços à direita (e á esquerda, respectivamente) apenas.
+Divisão:
+	Permite a divisão de strings.
+	
+	split - considera cada espaço uma 'divisão' da string, onde cada palavra se torna uma nova string,
+	em formato de lista.
+		frase.split()
+	
+Junção:
+	Permite concatenar listas.
+
+	join - permite concatenar uma lista de strings usando um novo separador.
+		Ex.: '-'.join(frase)
+			*O argumento deve sempre ser inserido entre aspas (simples ou duplas).
+
+Nota:
+*Para realizar uma conta na ordem contrária usamos os argumentos negativos.
+			Ex.: frase.find('o',-1) -> retorna a última ocorrência do caractere buscado.
+
+Aula 10 - Estruturas Condicionais
+	São sempre identadas onde podem ser compostas de dois blocos (bloco verdadeiro e bloco faso). São utilizados 
+	com o uso de ':' (dois pontos). Usamos if e else como funções condicionais.
+
+		if var == 2:
+			True
+		else:
+			False
+	
+	Se estrutura simples usa-se apenas o if, para estruturas compostas usamos if e else.
+
+	*Condição Simplificada - Outra maneira caso o argumento da condição seja simples é incluir ambos os 
+	critérios (if e else) na mesma linha:
+		
+		Ex. print('carro novo' if tempo <=3 else 'carro velho')
+
+	Usamos além de funções, carcteres e operadores lógicos para definir as condições.
+
+*** Podemos repetir sequencias de string usando o seguinte formato:
+	Ex.: print('-=-' *10)
+
+*** Em "if" podemos usar 'or' ou 'and' para definir condições adicionais para a lógica aplicada.
+
+Aula #11 - Cores no Terminal (aula extra)
+	Utiliza o cód. ANSI. Sempre utiliza contra-barra033 no formato abaixo. A composição de style, text e backgorund é gerenciada pelo posicionamento de cada cor dentro da
+	query referente.
+		Ex.: \033[0;33;44m]
+
+	Para o ANSI os códigos de cada categoria segue uma mostra do que cada cód representa:
+			Style: Define o tipo de estilo da fonte aplicada e leva os parametros abaixo:
+				0 - none
+				1 - Bold
+				4 - Underline
+				7 - Negative
+			Text: define a cor do texto no terminal, vão de 30 a 37:
+				30 - branco
+				31 - vermelho
+				32 - verde
+				33 - amarelo
+				34 - azul
+				35 - roxo/magenta
+				36 - ciano
+				37 - cinza
+			Backgorund: define as cores de fundo, vai de 40 a 47:
+				40 - branco
+				41 - vermelho
+				42 - verde
+				43 - amarelo
+				44 - azul
+				45 - roxo/magenta
+				46 - ciano
+				47 - cinza
+	** o cód é incluso dentro do contexto de print e sempre inserido \033[m na conclusão do contexto 
+	para retornar a cor padrão.
+	Com o ANSI é possível utilizar dentro do format ou como uma variável.
+		** Dica: Podemos criar um dicionario com as cores que iremos utilizar inserindo o conjunto de variáveis
+		em uma lista como no modelo abaixom:
+			cores = {'limpa':'\033[m', 
+					 'azul':'\033[34m',
+					 'amarelo':'\033[34m', 
+					 'amarelo':'\033[33m]', 
+					 'negativo':'\033[7;30m]'
+					}
+		

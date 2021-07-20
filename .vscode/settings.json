@@ -1,0 +1,23 @@
+{
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.actio.run"
+    ],
+    "python.testing.pytestArgs": [
+        "venv"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": false,
+    "python.testing.promptToConfigure": false,
+    "python.pythonPath": "venv\\Scripts\\python.exe"
+    "window.zoomLevel": 0,
+    "editor.fontSize":15,
+    "code-runner.ignoreSelection": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+
+        "python": "venv\\Scripts\\python.exe",
+
+    }
+
+}
